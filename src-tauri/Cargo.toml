@@ -1,0 +1,53 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "Bridge - Connect. Transfer. Done."
+authors = ["Bridge Developers"]
+license = "MIT"
+repository = ""
+edition = "2021"
+rust-version = "1.70"
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.0", features = ["full"] }
+uuid = { version = "1.0", features = ["v4"] }
+rusqlite = { version = "0.28", features = ["bundled"] }
+tauri = { version = "2.0.0", features = [] }
+tauri-plugin-log = "2"
+hostname = "0.3"
+# Cryptography dependencies
+ring = "0.17"
+x25519-dalek = "3"
+ed25519-dalek = "2"
+aes-gcm = "0.10"
+# Networking
+socket2 = "0.5"
+ipnet = "2"
+# Async utilities
+futures = "0.3"
+# For QR code generation (if needed later)
+qrcode = "0.12"
+# For system information
+sysinfo = "0.32"
+# For directory handling
+dirs = "5.0"
+# For random number generation
+rand = "0.8"
+# For error handling
+anyhow = "1.0"
+# For logging
+log = "0.4"
+# For date and time handling
+chrono = { version = "0.4", features = ["serde"] }
+# For cryptographic operations
+generic-array = "0.14"
+typenum = "1.15"
